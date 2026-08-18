@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi Portafolio | Ingeniería</title>
+
+    <meta name="description"
+          content="Portafolio profesional de ingeniería, proyectos, certificaciones y redes sociales.">
+
+    <style>
+
+        /* =========================================================
+           VARIABLES
+        ========================================================= */
+
+        :root {
+            --bg-primary: #0b1120;
+            --bg-secondary: #111827;
+            --bg-card: #172033;
+
+            --text-primary: #f8fafc;
+            --text-secondary: #aeb8c8;
+
+            --accent: #38bdf8;
+            --accent-dark: #0284c7;
+
+            --border: rgba(255,255,255,0.08);
+
+            --header-height: 76px;
+
+            --max-width: 1200px;
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: var(--header-height);
+
+            z-index: 1000;
+
+            background: rgba(11, 17, 32, 0.88);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-container {
+            width: min(100% - 40px, var(--max-width));
+            height: 100%;
+
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        /* LOGO */
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+
+        /* NAVIGATION */
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+
+            list-style: none;
+        }
+
+        .nav-link {
+            position: relative;
+
+            color: var(--text-secondary);
+
+            font-size: 0.9rem;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--text-primary);
+        }
+
+        .nav-link.active::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -8px;
+
+            width: 100%;
+            height: 2px;
+
+            background: var(--accent);
+        }
+
+
+        /* MENU MOBILE */
+
+        .menu-toggle {
+            display: none;
+
+            background: none;
+            border: none;
+
+            color: white;
+
+            font-size: 1.7rem;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           MAIN
+        ========================================================= */
+
+        main {
+            padding-top: var(--header-height);
+        }
+
+        section {
+            width: min(100% - 40px, var(--max-width));
+
+            margin: auto;
+
+            min-height: 100vh;
+
+            padding: 100px 0;
+        }
+
+
+        /* =========================================================
+           HERO / INICIO
+        ========================================================= */
+
+        .hero {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+
+            gap: 80px;
+        }
+
+
+        /* CONTENEDOR IZQUIERDO */
+
+        .profile-container {
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            text-align: center;
+        }
+
+
+        /* FOTO */
+
+        .profile-image {
+            width: 270px;
+            height: 270px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 4px solid var(--accent);
+
+            box-shadow:
+                0 0 0 10px rgba(56,189,248,0.08),
+                0 20px 50px rgba(0,0,0,0.35);
+
+            margin-bottom: 30px;
+        }
+
+
+        /* NOMBRE */
+
+        .profile-name {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+
+            line-height: 1.1;
+
+            margin-bottom: 10px;
+        }
+
+        .profile-name span {
+            color: var(--accent);
+        }
+
+        .profile-role {
+            color: var(--text-secondary);
+
+            font-size: 1rem;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================================
+           DESCRIPCIÓN
+        ========================================================= */
+
+        .hero-description {
+            max-width: 550px;
+        }
+
+        .hero-label {
+            color: var(--accent);
+
+            font-size: 0.85rem;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+
+            line-height: 1.15;
+
+            margin-bottom: 25px;
+        }
+
+        .hero-title span {
+            color: var(--accent);
+        }
+
+        .hero-text {
+            color: var(--text-secondary);
+
+            font-size: 1.05rem;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* BOTONES */
+
+        .hero-buttons {
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 12px 22px;
+
+            border-radius: 8px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+
+            color: #06111c;
+        }
+
+        .btn-primary:hover {
+            background: #7dd3fc;
+
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+
+            color: var(--accent);
+        }
+
+
+        /* =========================================================
+           TÍTULOS DE SECCIÓN
+        ========================================================= */
+
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        .section-label {
+            color: var(--accent);
+
+            font-size: 0.8rem;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+
+            margin-top: 10px;
+        }
+
+        .section-description {
+            color: var(--text-secondary);
+
+            max-width: 650px;
+
+            margin-top: 15px;
+        }
+
+
+        /* =========================================================
+           PROYECTOS
+        ========================================================= */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+            padding: 25px;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+
+            border-color: rgba(56,189,248,0.4);
+        }
+
+        .project-number {
+            color: var(--accent);
+
+            font-size: 0.8rem;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+
+            margin-bottom: 12px;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+
+            font-size: 0.95rem;
+
+            margin-bottom: 20px;
+        }
+
+        .project-tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+        .tag {
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            background: rgba(56,189,248,0.08);
+
+            color: var(--accent);
+
+            font-size: 0.75rem;
+        }
+
+
+        /* =========================================================
+           CERTIFICADOS
+        ========================================================= */
+
+        .certificates-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .certificate-card {
+            background: var(--bg-card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+            padding: 25px;
+        }
+
+        .certificate-icon {
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: rgba(56,189,248,0.1);
+
+            color: var(--accent);
+
+            font-size: 1.5rem;
+
+            margin-bottom: 20px;
+        }
+
+        .certificate-title {
+            font-size: 1.15rem;
+
+            margin-bottom: 8px;
+        }
+
+        .certificate-institution {
+            color: var(--text-secondary);
+
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================================================
+           REDES SOCIALES
+        ========================================================= */
+
+        .social-container {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 20px;
+        }
+
+        .social-card {
+            width: 180px;
+
+            padding: 25px;
+
+            background: var(--bg-card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 12px;
+
+            transition: 0.3s;
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+
+            border-color: var(--accent);
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: rgba(56,189,248,0.08);
+
+            color: var(--accent);
+        }
+
+        .social-icon svg {
+            width: 24px;
+            height: 24px;
+
+            fill: currentColor;
+        }
+
+        .social-name {
+            font-weight: 600;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 30px;
+
+            text-align: center;
+
+            border-top: 1px solid var(--border);
+
+            color: var(--text-secondary);
+
+            font-size: 0.85rem;
+        }
+
+
+        /* =========================================================
+           ANIMACIÓN
+        ========================================================= */
+
+        .fade-in {
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+                gap: 50px;
+            }
+
+            .hero-description {
+                margin: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .projects-grid,
+            .certificates-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .header-container {
+                width: min(100% - 30px, var(--max-width));
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: absolute;
+
+                top: var(--header-height);
+
+                left: 0;
+
+                width: 100%;
+
+                padding: 25px;
+
+                background: var(--bg-secondary);
+
+                flex-direction: column;
+
+                gap: 25px;
+
+                display: none;
+
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-menu.open {
+                display: flex;
+            }
+
+            section {
+                width: min(100% - 30px, var(--max-width));
+
+                padding: 80px 0;
+            }
+
+            .profile-image {
+                width: 210px;
+                height: 210px;
+            }
+
+            .projects-grid,
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-container {
+                justify-content: center;
+            }
+
+            .social-card {
+                width: 140px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header>
+
+        <div class="header-container">
+
+            <a href="#inicio" class="logo">
+                PORTA<span>FOLIO</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Abrir menú">
+
+                ☰
+
+            </button>
+
+            <nav>
+
+                <ul class="nav-menu" id="navMenu">
+
+                    <li>
+                        <a
+                            href="#inicio"
+                            class="nav-link active">
+                            INICIO
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="#proyectos"
+                            class="nav-link">
+                            PROYECTOS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="#certificados"
+                            class="nav-link">
+                            CERTIFICADOS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="#redes"
+                            class="nav-link">
+                            REDES SOCIALES
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         CONTENIDO
+    ========================================================== -->
+
+    <main>
+
+
+        <!-- =====================================================
+             INICIO
+        ====================================================== -->
+
+        <section id="inicio" class="hero fade-in">
+
+            <!-- IZQUIERDA -->
+
+            <div class="profile-container">
+
+                <img
+                    id="profileImage"
+                    class="profile-image"
+                    src="https://placehold.co/500x500/111827/38bdf8?text=TU+FOTO"
+                    alt="Foto de perfil">
+
+                <h1
+                    id="profileName"
+                    class="profile-name">
+                    Tu <span>Nombre</span>
+                </h1>
+
+                <p
+                    id="profileRole"
+                    class="profile-role">
+                    Ingeniería y Tecnología
+                </p>
+
+            </div>
+
+
+            <!-- DERECHA -->
+
+            <div class="hero-description">
+
+                <p class="hero-label">
+                    SOBRE MÍ
+                </p>
+
+                <h2
+                    id="heroTitle"
+                    class="hero-title">
+                    Ingeniería, tecnología y
+                    <span>soluciones innovadoras.</span>
+                </h2>
+
+                <p
+                    id="heroText"
+                    class="hero-text">
+
+                    Soy estudiante de ingeniería apasionado por la
+                    tecnología, la electrónica, la automatización y
+                    el desarrollo de soluciones aplicadas a problemas
+                    reales.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#proyectos"
+                        class="btn btn-primary">
+
+                        Ver proyectos
+
+                    </a>
+
+                    <a
+                        href="#certificados"
+                        class="btn btn-secondary">
+
+                        Mis certificados
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROYECTOS
+        ====================================================== -->
+
+        <section id="proyectos">
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    PORTAFOLIO
+                </p>
+
+                <h2 class="section-title">
+                    Proyectos
+                </h2>
+
+                <p class="section-description">
+
+                    Una selección de proyectos académicos,
+                    profesionales y personales desarrollados
+                    durante mi formación.
+
+                </p>
+
+            </div>
+
+            <div
+                id="projectsContainer"
+                class="projects-grid">
+
+                <!-- JS -->
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CERTIFICADOS
+        ====================================================== -->
+
+        <section id="certificados">
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    FORMACIÓN
+                </p>
+
+                <h2 class="section-title">
+                    Certificados
+                </h2>
+
+                <p class="section-description">
+
+                    Cursos, capacitaciones y certificaciones
+                    obtenidas durante mi formación profesional.
+
+                </p>
+
+            </div>
+
+            <div
+                id="certificatesContainer"
+                class="certificates-grid">
+
+                <!-- JS -->
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             REDES SOCIALES
+        ====================================================== -->
+
+        <section id="redes">
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    CONTACTO
+                </p>
+
+                <h2 class="section-title">
+                    Redes sociales
+                </h2>
+
+                <p class="section-description">
+
+                    Puedes encontrarme en las siguientes
+                    plataformas.
+
+                </p>
+
+            </div>
+
+            <div
+                id="socialContainer"
+                class="social-container">
+
+                <!-- JS -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <p>
+            © <span id="currentYear"></span>
+            <span id="footerName">Tu Nombre</span>.
+            Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT + JSON
+    ========================================================== -->
+
+    <script>
+
+        /* =========================================================
+           DATOS DEL PORTAFOLIO
+           
+           Esta estructura funciona como nuestro JSON.
+           Aquí posteriormente solamente cambiaremos la información.
+        ========================================================== */
+
+        const portfolioData = {
+
+            "perfil": {
+
+                "nombre": "Tu Nombre",
+
+                "apellido": "Tu Apellido",
+
+                "rol": "Estudiante de Ingeniería",
+
+                "foto": "https://placehold.co/500x500/111827/38bdf8?text=TU+FOTO",
+
+                "titulo":
+                    "Ingeniería, tecnología y soluciones innovadoras.",
+
+                "descripcion":
+                    "Soy estudiante de ingeniería apasionado por la tecnología, la electrónica, la automatización y el desarrollo de soluciones aplicadas a problemas reales."
+
+            },
+
+
+            "proyectos": [
+
+                {
+
+                    "titulo":
+                        "Sistema de monitoreo ambiental",
+
+                    "descripcion":
+                        "Sistema automatizado para monitoreo y control de variables ambientales mediante sensores, microcontroladores y una interfaz de usuario.",
+
+                    "tecnologias": [
+                        "ESP32",
+                        "IoT",
+                        "Sensores",
+                        "Automatización"
+                    ]
+
+                },
+
+                {
+
+                    "titulo":
+                        "Sistema de control automatizado",
+
+                    "descripcion":
+                        "Desarrollo de un sistema de control basado en sensores y actuadores para automatizar procesos y mantener condiciones específicas.",
+
+                    "tecnologias": [
+                        "Arduino",
+                        "Control",
+                        "Electrónica"
+                    ]
+
+                },
+
+                {
+
+                    "titulo":
+                        "Análisis de sistemas eléctricos",
+
+                    "descripcion":
+                        "Análisis técnico de sistemas eléctricos, perfiles de carga, alimentadores y comportamiento de la demanda energética.",
+
+                    "tecnologias": [
+                        "MATLAB",
+                        "Excel",
+                        "Sistemas eléctricos"
+                    ]
+
+                }
+
+            ],
+
+
+            "certificados": [
+
+                {
+
+                    "titulo":
+                        "Certificación en Ingeniería",
+
+                    "institucion":
+                        "Institución académica"
+
+                },
+
+                {
+
+                    "titulo":
+                        "Curso de Automatización",
+
+                    "institucion":
+                        "Institución / Plataforma"
+
+                },
+
+                {
+
+                    "titulo":
+                        "Curso de Programación",
+
+                    "institucion":
+                        "Institución / Plataforma"
+
+                }
+
+            ],
+
+
+            "redes": [
+
+                {
+
+                    "nombre": "GitHub",
+
+                    "url": "https://github.com/",
+
+                    "icono": "github"
+
+                },
+
+                {
+
+                    "nombre": "LinkedIn",
+
+                    "url": "https://www.linkedin.com/",
+
+                    "icono": "linkedin"
+
+                },
+
+                {
+
+                    "nombre": "Instagram",
+
+                    "url": "https://www.instagram.com/",
+
+                    "icono": "instagram"
+
+                },
+
+                {
+
+                    "nombre": "Facebook",
+
+                    "url": "https://www.facebook.com/",
+
+                    "icono": "facebook"
+
+                }
+
+            ]
+
+        };
+
+
+        /* =========================================================
+           CARGAR INFORMACIÓN DEL PERFIL
+        ========================================================== */
+
+        document.getElementById("profileImage").src =
+            portfolioData.perfil.foto;
+
+        document.getElementById("profileName").innerHTML =
+            `${portfolioData.perfil.nombre} 
+             <span>${portfolioData.perfil.apellido}</span>`;
+
+        document.getElementById("profileRole").textContent =
+            portfolioData.perfil.rol;
+
+        document.getElementById("heroTitle").textContent =
+            portfolioData.perfil.titulo;
+
+        document.getElementById("heroText").textContent =
+            portfolioData.perfil.descripcion;
+
+        document.getElementById("footerName").textContent =
+            `${portfolioData.perfil.nombre} ${portfolioData.perfil.apellido}`;
+
+
+        /* =========================================================
+           PROYECTOS
+        ========================================================== */
+
+        const projectsContainer =
+            document.getElementById("projectsContainer");
+
+        portfolioData.proyectos.forEach((project, index) => {
+
+            const card = document.createElement("article");
+
+            card.className = "project-card";
+
+            card.innerHTML = `
+
+                <p class="project-number">
+                    PROYECTO ${String(index + 1).padStart(2, "0")}
+                </p>
+
+                <h3 class="project-title">
+                    ${project.titulo}
+                </h3>
+
+                <p class="project-description">
+                    ${project.descripcion}
+                </p>
+
+                <div class="project-tags">
+
+                    ${project.tecnologias
+                        .map(
+                            tech =>
+                            `<span class="tag">${tech}</span>`
+                        )
+                        .join("")
+                    }
+
+                </div>
+
+            `;
+
+            projectsContainer.appendChild(card);
+
+        });
+
+
+        /* =========================================================
+           CERTIFICADOS
+        ========================================================== */
+
+        const certificatesContainer =
+            document.getElementById("certificatesContainer");
+
+        portfolioData.certificados.forEach(certificate => {
+
+            const card = document.createElement("article");
+
+            card.className = "certificate-card";
+
+            card.innerHTML = `
+
+                <div class="certificate-icon">
+                    ✓
+                </div>
+
+                <h3 class="certificate-title">
+                    ${certificate.titulo}
+                </h3>
+
+                <p class="certificate-institution">
+                    ${certificate.institucion}
+                </p>
+
+            `;
+
+            certificatesContainer.appendChild(card);
+
+        });
+
+
+        /* =========================================================
+           ICONOS SVG
+        ========================================================== */
+
+        const icons = {
+
+            github: `
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08
+                    3.29 9.39 7.86 10.91.58.11.79-.25.79-.56
+                    0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54
+                    -.53-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7
+                    1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.71
+                    1.25 3.37.96.1-.75.4-1.25.73-1.54-2.55-.29
+                    -5.23-1.28-5.23-5.68 0-1.25.45-2.27 1.19-3.07
+                    -.12-.29-.52-1.45.11-3.02 0 0 .97-.31 3.18
+                    1.17A11 11 0 0 1 12 6.07c.98 0 1.97.13
+                    2.89.38 2.2-1.48 3.17-1.17 3.17-1.17
+                    .63 1.57.23 2.73.11 3.02.74.8 1.19 1.82
+                    1.19 3.07 0 4.41-2.69 5.39-5.25 5.67
+                    .41.35.78 1.04.78 2.1 0 1.52-.01 2.75-.01
+                    3.12 0 .3.21.67.8.55A11.51 11.51 0 0 0
+                    23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
+                </svg>
+            `,
+
+            linkedin: `
+                <svg viewBox="0 0 24 24">
+                    <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5
+                    2.5 2.5 0 0 0 0-5ZM2.75 9.5h4.46V21H2.75V9.5ZM9.9
+                    9.5h4.28v1.57h.06c.6-1.14 2.05-2.34 4.22-2.34
+                    4.51 0 5.34 2.97 5.34 6.84V21h-4.46v-4.82
+                    c0-1.15-.02-2.62-1.6-2.62-1.6 0-1.84 1.25
+                    -1.84 2.54V21H9.9V9.5Z"/>
+                </svg>
+            `,
+
+            instagram: `
+                <svg viewBox="0 0 24 24">
+                    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0
+                    0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0
+                    2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3
+                    0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5
+                    4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0
+                    2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12
+                    9.5ZM17.75 6a1.25 1.25 0 1 1-1.25 1.25A1.25
+                    1.25 0 0 1 17.75 6Z"/>
+                </svg>
+            `,
+
+            facebook: `
+                <svg viewBox="0 0 24 24">
+                    <path d="M13.5 21v-8h2.75l.41-3h-3.16V8.08
+                    c0-.87.24-1.46 1.49-1.46h1.59V3.94c-.28-.04
+                    -1.25-.12-2.38-.12-2.35 0-3.96 1.44-3.96
+                    4.08V10H7.5v3h2.74v8h3.26Z"/>
+                </svg>
+            `
+
+        };
+
+
+        /* =========================================================
+           REDES
+        ========================================================== */
+
+        const socialContainer =
+            document.getElementById("socialContainer");
+
+        portfolioData.redes.forEach(social => {
+
+            const card = document.createElement("a");
+
+            card.className = "social-card";
+
+            card.href = social.url;
+
+            card.target = "_blank";
+
+            card.rel = "noopener noreferrer";
+
+            card.innerHTML = `
+
+                <div class="social-icon">
+
+                    ${icons[social.icono] || ""}
+
+                </div>
+
+                <span class="social-name">
+                    ${social.nombre}
+                </span>
+
+            `;
+
+            socialContainer.appendChild(card);
+
+        });
+
+
+        /* =========================================================
+           MENÚ MOBILE
+        ========================================================== */
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const navMenu =
+            document.getElementById("navMenu");
+
+        menuToggle.addEventListener("click", () => {
+
+            navMenu.classList.toggle("open");
+
+        });
+
+
+        /* =========================================================
+           CERRAR MENÚ AL SELECCIONAR
+        ========================================================== */
+
+        document.querySelectorAll(".nav-link")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    navMenu.classList.remove("open");
+
+                });
+
+            });
+
+
+        /* =========================================================
+           DETECTAR SECCIÓN ACTIVA
+        ========================================================== */
+
+        const sections =
+            document.querySelectorAll("main section");
+
+        const navLinks =
+            document.querySelectorAll(".nav-link");
+
+        const observer = new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        navLinks.forEach(link => {
+
+                            link.classList.remove("active");
+
+                            if (
+                                link.getAttribute("href") ===
+                                "#" + entry.target.id
+                            ) {
+
+                                link.classList.add("active");
+
+                            }
+
+                        });
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.45
+            }
+
+        );
+
+        sections.forEach(section => {
+
+            observer.observe(section);
+
+        });
+
+
+        /* =========================================================
+           AÑO ACTUAL
+        ========================================================== */
+
+        document.getElementById("currentYear")
+            .textContent = new Date().getFullYear();
+
+    </script>
+
+</body>
+</html>

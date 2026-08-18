@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi Portafolio | Ingeniería</title>
+
+    <meta
+        name="description"
+        content="Portafolio profesional de ingeniería, proyectos, certificaciones y redes sociales."
+    >
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header>
+
+        <div class="header-container">
+
+            <a href="#inicio" class="logo">
+                PORTA<span>FOLIO</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Abrir menú">
+
+                ☰
+
+            </button>
+
+            <nav>
+
+                <ul class="nav-menu" id="navMenu">
+
+                    <li>
+                        <a href="#inicio" class="nav-link active">
+                            INICIO
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#proyectos" class="nav-link">
+                            PROYECTOS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#certificados" class="nav-link">
+                            CERTIFICADOS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#redes" class="nav-link">
+                            REDES SOCIALES
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             INICIO
+        ================================================== -->
+
+        <section id="inicio" class="hero">
+
+            <!-- CONTENEDOR IZQUIERDO -->
+
+            <div class="profile-container">
+
+                <img
+                    id="profileImage"
+                    class="profile-image"
+                    src="foto.jpg"
+                    alt="Foto de perfil"
+                >
+
+                <h1
+                    id="profileName"
+                    class="profile-name">
+
+                    Tu <span>Nombre</span>
+
+                </h1>
+
+                <p
+                    id="profileRole"
+                    class="profile-role">
+
+                    ESTUDIANTE DE INGENIERÍA
+
+                </p>
+
+            </div>
+
+
+            <!-- CONTENEDOR DERECHO -->
+
+            <div class="hero-description">
+
+                <p class="hero-label">
+                    SOBRE MÍ
+                </p>
+
+                <h2 class="hero-title">
+
+                    Ingeniería, tecnología y
+                    <span>soluciones innovadoras.</span>
+
+                </h2>
+
+                <p class="hero-text">
+
+                    Soy estudiante de ingeniería apasionado por la
+                    tecnología, la electrónica, la automatización y
+                    el desarrollo de soluciones aplicadas a problemas
+                    reales.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#proyectos"
+                        class="btn btn-primary">
+
+                        VER PROYECTOS
+
+                    </a>
+
+                    <a
+                        href="#certificados"
+                        class="btn btn-secondary">
+
+                        CERTIFICADOS
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PROYECTOS
+        ================================================== -->
+
+        <section id="proyectos">
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    PORTAFOLIO
+                </p>
+
+                <h2 class="section-title">
+                    Proyectos
+                </h2>
+
+                <p class="section-description">
+
+                    Una selección de proyectos académicos,
+                    profesionales y personales desarrollados
+                    durante mi formación.
+
+                </p>
+
+            </div>
+
+
+            <div
+                id="projectsContainer"
+                class="projects-grid">
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CERTIFICADOS
+        ================================================== -->
+
+        <section id="certificados">
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    FORMACIÓN
+                </p>
+
+                <h2 class="section-title">
+                    Certificados
+                </h2>
+
+                <p class="section-description">
+
+                    Cursos, capacitaciones y certificaciones
+                    obtenidas durante mi formación profesional.
+
+                </p>
+
+            </div>
+
+
+            <div
+                id="certificatesContainer"
+                class="certificates-grid">
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             REDES SOCIALES
+        ================================================== -->
+
+        <section id="redes">
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    CONTACTO
+                </p>
+
+                <h2 class="section-title">
+                    Redes sociales
+                </h2>
+
+                <p class="section-description">
+
+                    Puedes encontrarme en las siguientes
+                    plataformas.
+
+                </p>
+
+            </div>
+
+
+            <div
+                id="socialContainer"
+                class="social-container">
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <p>
+
+            © <span id="currentYear"></span>
+
+            <span id="footerName">
+                Tu Nombre
+            </span>.
+
+            Todos los derechos reservados.
+
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
